@@ -1,1 +1,2 @@
-bot.config # Ignore config file
+# Ignore config file
+bot.config
