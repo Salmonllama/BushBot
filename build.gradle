@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group 'dev.salmonllama'
+version '0.0.0'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://jitpack.io'
+    }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation 'com.github.salmonllama.sdcf4j:sdcf4j-core:v1.0.12'
+    implementation 'com.github.salmonllama.sdcf4j:sdcf4j-javacord:v1.0.12'
+    implementation 'org.javacord:javacord:3.0.5'
+    implementation 'com.github.Kaaz:ConfigurationBuilder:0.4'
+}
