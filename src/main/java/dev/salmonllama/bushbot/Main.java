@@ -3,6 +3,7 @@ package dev.salmonllama.bushbot;
 import com.kaaz.configuration.ConfigurationBuilder;
 import de.btobastian.sdcf4j.CommandHandler;
 import de.btobastian.sdcf4j.handler.JavacordHandler;
+import dev.salmonllama.bushbot.commands.RemindMeCommand;
 import dev.salmonllama.bushbot.config.BotConfig;
 import org.javacord.api.DiscordApi;
 import org.javacord.api.DiscordApiBuilder;
@@ -25,7 +26,10 @@ public class Main {
         new DiscordApiBuilder().setToken(BotConfig.TOKEN).login().thenAccept(api -> {
             System.out.println(generateInvite(api));
 
-            cmdHandler = new JavacordHandler(api);            
+            cmdHandler = new JavacordHandler(api);
+            cmdHandler.setDefaultPrefix("!");
+
+            cmdHandler.registerCommand(new RemindMeCommand());
         });
     }
 

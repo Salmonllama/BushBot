@@ -19,6 +19,7 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation 'com.vdurmont:emoji-java:5.1.1'
     implementation 'com.github.salmonllama.sdcf4j:sdcf4j-core:v1.0.12'
     implementation 'com.github.salmonllama.sdcf4j:sdcf4j-javacord:v1.0.12'
     implementation 'org.javacord:javacord:3.0.5'
