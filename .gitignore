@@ -1,4 +1,7 @@
 # Ignore config file
 bot.config
 
-# Test
+# Ignore build files
+.gradle
+bin/
+build/
