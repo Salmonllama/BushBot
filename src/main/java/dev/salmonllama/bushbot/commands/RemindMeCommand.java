@@ -1,9 +1,7 @@
 package dev.salmonllama.bushbot.commands;
 
-import com.vdurmont.emoji.EmojiParser;
 import de.btobastian.sdcf4j.Command;
 import de.btobastian.sdcf4j.CommandExecutor;
-import dev.salmonllama.bushbot.utilities.MessageUtilities;
 import org.javacord.api.DiscordApi;
 import org.javacord.api.entity.channel.TextChannel;
 import org.javacord.api.entity.message.Message;
@@ -23,6 +21,6 @@ public class RemindMeCommand implements CommandExecutor {
 
         channel.sendMessage("reminder created");
 
-        api.getThreadPool().getScheduler().schedule((Runnable) channel.sendMessage(reason), delay, TimeUnit.SECONDS);
+        api.getThreadPool().getScheduler().schedule(() -> message.getChannel().sendMessage(reason), delay, TimeUnit.SECONDS);
     }
 }
